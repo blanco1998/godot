@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b3upubjmnk1eq"]
+
+[ext_resource type="Script" uid="uid://dd37yws3ngm1v" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="Texture2D" uid="uid://djjponsttwqfs" path="res://assets/GemBg.png" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://c6wsbyjga68up" path="res://scenes/dice/dice.tscn" id="2_7h61r"]
+[ext_resource type="AudioStream" uid="uid://rxwcie4b6wbb" path="res://assets/tetris.mp3" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://bx7c4mo02v7sl" path="res://scenes/fox/fox.tscn" id="5_lfrn8"]
+[ext_resource type="FontFile" uid="uid://dteiqmwvsiakg" path="res://assets/TitanOne-Regular.ttf" id="6_5i0tg"]
+[ext_resource type="LabelSettings" uid="uid://cifpudtn2r7ew" path="res://resources/game_over_label.tres" id="7_87uf6"]
+[ext_resource type="PackedScene" uid="uid://dc3f5s48shmig" path="res://scenes/reloader.tscn" id="7_bdhmt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_87uf6"]
+font = ExtResource("6_5i0tg")
+font_size = 25
+outline_size = 8
+outline_color = Color(inf, inf, inf, 1)
+
+[node name="Game" type="Node2D" unique_id=1280344356]
+script = ExtResource("1_0sr1o")
+dice_scene = ExtResource("2_7h61r")
+
+[node name="GemBg" type="Sprite2D" parent="." unique_id=2002489624]
+position = Vector2(566, 282)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_sul5r")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1547364278]
+autostart = true
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=944231537]
+stream = ExtResource("4_kelw5")
+volume_db = -18.131
+autoplay = true
+
+[node name="Fox" parent="." unique_id=1315543533 instance=ExtResource("5_lfrn8")]
+position = Vector2(553, 583)
+
+[node name="Reloader" parent="." unique_id=835442335 instance=ExtResource("7_bdhmt")]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1269785121]
+offset_left = 26.0
+offset_top = 28.0
+offset_right = 99.0
+offset_bottom = 58.0
+text = "0000"
+label_settings = SubResource("LabelSettings_87uf6")
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1506723806]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Game Over"
+label_settings = ExtResource("7_87uf6")
+horizontal_alignment = 1
+vertical_alignment = 1

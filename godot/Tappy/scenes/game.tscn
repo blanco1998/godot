@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cmvi8rt67bmrw"]
+
+[ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://assets/background/Parallax0.png" id="1_uwrxv"]
+
+[node name="Game" type="Node" unique_id=108475994]
+
+[node name="Parallax0" type="Sprite2D" parent="." unique_id=727167885]
+position = Vector2(477, 747)
+texture = ExtResource("1_uwrxv")

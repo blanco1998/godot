@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dc3f5s48shmig"]
+
+[ext_resource type="Script" uid="uid://dss86yxj8e3f4" path="res://reloader.gd" id="1_3b8fi"]
+
+[node name="Reloader" type="Node" unique_id=779245016]
+process_mode = 3
+script = ExtResource("1_3b8fi")
