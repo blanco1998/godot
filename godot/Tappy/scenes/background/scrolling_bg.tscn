@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://30l5mt5vviq6"]
+
+[ext_resource type="Texture2D" uid="uid://ds8jedewkd4q1" path="res://assets/background/Gradient (z -6).png" id="1_0icn0"]
+[ext_resource type="Texture2D" uid="uid://ckqcvckwhahi3" path="res://assets/background/Parallax2.png" id="1_e2d1d"]
+[ext_resource type="Texture2D" uid="uid://0ib6ntu50l1u" path="res://assets/background/Parallax4.png" id="1_iawd7"]
+[ext_resource type="Texture2D" uid="uid://caa6rhabvcv07" path="res://assets/background/Parallax5.png" id="2_mw6wb"]
+[ext_resource type="Texture2D" uid="uid://b5l5n8kimkeni" path="res://assets/background/Parallax3.png" id="2_srn65"]
+[ext_resource type="Texture2D" uid="uid://bkn5hrkyb7fxj" path="res://assets/background/Parallax1.png" id="6_mw6wb"]
+[ext_resource type="Texture2D" uid="uid://bsxy5jauh8c0r" path="res://assets/background/Parallax0.png" id="7_sj71j"]
+
+[node name="ScrollingBg" type="Node2D" unique_id=1280410373]
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1702145123]
+self_modulate = Color(0.38007212, 0.38007212, 0.38007212, 1)
+scale = Vector2(1.0416667, 1.0550351)
+texture = ExtResource("1_0icn0")
+centered = false
+
+[node name="Parallax2D_Cloudes" type="Parallax2D" parent="." unique_id=1596522238]
+scroll_offset = Vector2(-3, 25)
+repeat_size = Vector2(1072, 0)
+autoscroll = Vector2(-30, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D_Cloudes" unique_id=2062982943]
+texture = ExtResource("2_mw6wb")
+centered = false
+
+[node name="Parallax2D_Mountain" type="Parallax2D" parent="." unique_id=566276598]
+repeat_size = Vector2(1072, 0)
+autoscroll = Vector2(-30, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D_Mountain" unique_id=139790626]
+position = Vector2(-34, 164)
+texture = ExtResource("1_iawd7")
+centered = false
+
+[node name="Parallax2D_BgTrees" type="Parallax2D" parent="." unique_id=601799373]
+scroll_offset = Vector2(1, 0)
+repeat_size = Vector2(1072, 0)
+autoscroll = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D_BgTrees" unique_id=86637780]
+position = Vector2(2, 116)
+texture = ExtResource("2_srn65")
+centered = false
+
+[node name="Parallax2D_Trees" type="Parallax2D" parent="." unique_id=254346039]
+repeat_size = Vector2(1072, 0)
+autoscroll = Vector2(-60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D_Trees" unique_id=1800502154]
+position = Vector2(-126, 90)
+texture = ExtResource("1_e2d1d")
+centered = false
+
+[node name="Parallax2D_Bushes" type="Parallax2D" parent="." unique_id=1618271853]
+repeat_size = Vector2(1072, 0)
+autoscroll = Vector2(-60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D_Bushes" unique_id=476123599]
+position = Vector2(145, 106)
+texture = ExtResource("6_mw6wb")
+centered = false
+
+[node name="Parallax2D_Floor" type="Parallax2D" parent="." unique_id=1871390014]
+scroll_offset = Vector2(-3, -2)
+repeat_size = Vector2(1072, 0)
+autoscroll = Vector2(-110, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D_Floor" unique_id=832431662]
+z_index = 10
+position = Vector2(-83, 728)
+texture = ExtResource("7_sj71j")
+centered = false

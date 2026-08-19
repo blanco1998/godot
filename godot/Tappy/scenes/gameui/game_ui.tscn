@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://5i5ntlabm8vo"]
+
+[ext_resource type="Script" uid="uid://bbxxcac135l7u" path="res://scenes/gameui/game_ui.gd" id="1_aqi3a"]
+[ext_resource type="LabelSettings" uid="uid://d4k5wt7nkkk5r" path="res://resources/title_label_red_small.tres" id="1_uho1l"]
+[ext_resource type="LabelSettings" uid="uid://cx5cnmjt8m2" path="res://resources/title_label_white.tres" id="2_aqi3a"]
+[ext_resource type="LabelSettings" uid="uid://cpay05ooh8p2" path="res://resources/title_label_blue.tres" id="4_j8iu1"]
+[ext_resource type="AudioStream" uid="uid://wjnyhwhbyrd" path="res://assets/audio/game_over.wav" id="5_jd8co"]
+
+[node name="GameUI" type="Control" unique_id=1030811992]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqi3a")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=90265659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Score" type="Label" parent="MarginContainer" unique_id=1766436521]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000"
+label_settings = ExtResource("1_uho1l")
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer" unique_id=1358762281]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "GAME OVER"
+label_settings = ExtResource("2_aqi3a")
+
+[node name="PressJumpLabel" type="Label" parent="MarginContainer" unique_id=938309011]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PRESS JUMP"
+label_settings = ExtResource("4_j8iu1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=249360504]
+stream = ExtResource("5_jd8co")
+
+[node name="ShowSecondLabel" type="Timer" parent="." unique_id=1338983785]
+wait_time = 2.5
+
+[connection signal="timeout" from="ShowSecondLabel" to="." method="_on_show_second_label_timeout"]
